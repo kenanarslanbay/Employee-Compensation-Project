@@ -1,1 +1,4 @@
 
+[submodule "02-Orchestration/mage-zoomcamp"]
+	path = 02-Orchestration/mage-zoomcamp
+	url = https://github.com/mage-ai/mage-zoomcamp.git
