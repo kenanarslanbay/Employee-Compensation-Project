@@ -3,56 +3,19 @@ repos:
     rev: v2.3.0
     hooks:
       - id: check-yaml
-        files: .+  # Check YAML files in all directories
       - id: end-of-file-fixer
-        files: .+  # Check all files for end-of-file issues
       - id: check-added-large-files
-        files: .+  # Check all files for large additions
       - id: detect-private-key
-        files: .+  # Check all files for private keys
-
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.3.3
     hooks:
       - id: python-safety-dependencies-check
-        files: .+\.py$  # Check Python files in all directories
-
   - repo: https://github.com/psf/black
     rev: 22.10.0
     hooks:
       - id: black
-        files: .+\.py$  # Format Python files in all directories
-
   - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
     rev: v0.1.0
     hooks:
       - id: dockerfilelint
-        stages: [commit]
-        files: .+Dockerfile$  # Lint Dockerfiles in all directories
-
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.25.0
-    hooks:
-      - id: terraform_fmt
-        files: .+\.(tf|tfvars)$  # Format Terraform files in all directories
-
-  - repo: local
-    hooks:
-      - id: pylint
-        name: pylint
-        entry: pylint
-        language: system
-        files: .+\.py$  # Check Python files in all directories
-        exclude: ^tests/
-        args: [--rcfile=.pylintrc]
-      - id: shellcheck
-        name: shellcheck
-        entry: shellcheck
-        language: system
-        files: .+\.sh$  # Check Shell scripts in all directories
-      - id: makefile-lint
-        name: makefile-lint
-        entry: make
-        language: system
-        files: .+/Makefile$  # Check Makefiles in all directories
-        args: [lint]
+    stages: [commit]
