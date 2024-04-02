@@ -108,12 +108,12 @@ ssh -i ~/.ssh/gpc <yourname>@<externalip>
 - Create a file under **~/.ssh** called config. We will be using this for configuring SSH.
 
 Host de-project
-	HostName <externalip>
-    User <your_user_name>
-    IdentityFile ~/.ssh/gpc
+HostName <externalip>
+User <your_user_name>
+IdentityFile ~/.ssh/gpc
 	
 After you saved you can connect with following or you can set this configs on vs code.
--**ssh de-project**
+- **ssh de-project**
 
 **Note**: When you shutdown vm and intiliaze the VM IP may change time ti time.Thus, you may need to change external ip in your configs!
 
