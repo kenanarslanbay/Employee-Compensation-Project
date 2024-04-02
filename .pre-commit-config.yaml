@@ -3,39 +3,26 @@ repos:
     rev: v2.3.0
     hooks:
       - id: check-yaml
-        files: \.(yaml|yml)$  # Check YAML files in all directories
       - id: end-of-file-fixer
-        files: .+\.txt$  # Check text files in all directories
       - id: check-added-large-files
-        files: .+  # Check all files for large additions
       - id: detect-private-key
-        files: .+  # Check all files for private keys
-
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.3.3
     hooks:
       - id: python-safety-dependencies-check
-        files: \.(py)$  # Check Python files in all directories
-
   - repo: https://github.com/psf/black
     rev: 22.10.0
     hooks:
       - id: black
-        files: .+\.py$  # Format Python files in all directories
-
   - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
     rev: v0.1.0
     hooks:
       - id: dockerfilelint
-        stages: [commit]
-        files: .+Dockerfile$  # Lint Dockerfiles in all directories
-
+    stages: [commit]
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.25.0
     hooks:
       - id: terraform_fmt
-        files: .+\.(tf|tfvars)$  # Format Terraform files in all directories
-
   - repo: local
     hooks:
       - id: pylint
