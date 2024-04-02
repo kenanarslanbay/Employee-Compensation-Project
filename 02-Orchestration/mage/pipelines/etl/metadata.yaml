@@ -8,31 +8,31 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: fecth_data_from_api
+  name: load_from_api
   retry_config: null
   status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: fecth_data_from_api
+  uuid: load_from_api
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
-  - export_to_gcp
+  - export_to_gcs
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
   name: transform_data
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: transformer
   upstream_blocks:
-  - fecth_data_from_api
+  - load_from_api
   uuid: transform_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -40,26 +40,26 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: export_to_gcp
+  name: export_to_gcs
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
   - transform_data
-  uuid: export_to_gcp
+  uuid: export_to_gcs
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-03-30 10:16:26.485325+00:00'
+created_at: '2024-03-30 15:32:58.287243+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: ETL
+name: etl
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}

@@ -1,0 +1,12 @@
+triggers:
+- envs: []
+  last_enabled_at: 2024-03-30 21:24:29.002921
+  name: api_trigger
+  pipeline_uuid: etl
+  schedule_interval: null
+  schedule_type: api
+  settings: null
+  sla: null
+  start_time: 2024-03-30 21:24:00
+  status: active
+  variables: {}

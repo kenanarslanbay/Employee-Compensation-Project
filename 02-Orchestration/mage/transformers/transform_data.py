@@ -27,12 +27,12 @@ def execute_combined_transformer_actions(df: DataFrame, *args, **kwargs) -> Data
             .query('total_compensation != 0 and total_salary != 0')
             .rename(columns={'employee_identifier':'employee_id'})  # Rename column
             .query("`year_type` == 'Fiscal'"))
+
     
-    
+    #Removing year_type after filtering
     del df['year_type']
 
     #adjusting columns positions:
-
     cols_to_adjust = ['employee_id', 'organization_group', 'department', 'union', 'job_family',
                     'job', 'salaries', 'overtime', 'other_salaries','total_salary', 'retirement',
                     'health_and_dental', 'other_benefits','total_benefits', 'total_compensation','year']
