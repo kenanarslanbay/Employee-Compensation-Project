@@ -1,28 +1,27 @@
-.PHONY: setup start trigger-pipeline all 
+include .env
 
-# Define your project name here
-PROJECT_NAME := mage
-DOCKER_IMAGE := mageai/mageai
-CONTAINER_NAME := $(PROJECT_NAME)_cont
-HOST_PORT := 6789
-CONTAINER_PORT := 6789
-# Define the directory you want to work from
-WORKING_DIR := $(shell pwd)/02-Orchestration
-DOCKER_USER := $(shell id -u):$(shell id -g)
+.PHONY: setup start trigger-pipeline all
 
+# Main target to run all tasks
 all: setup start trigger-pipeline
 
+# Target to pull docker image
 setup:
+	@echo "Pulling Docker image..."
 	@(cd $(WORKING_DIR) && \
 	docker pull $(DOCKER_IMAGE))
 
-start:
+# Target to start the container
+start: setup
+	@echo "Starting container..."
 	@(cd $(WORKING_DIR) && \
 	docker run -d --name $(CONTAINER_NAME) -p $(HOST_PORT):$(CONTAINER_PORT) -v "$(WORKING_DIR)":/home/src --user $(DOCKER_USER) $(DOCKER_IMAGE) /app/run_app.sh mage start $(PROJECT_NAME) && \
-	sleep 20) # Give some initial time for the server to start up before checking
+	sleep 45) # Give some initial time for the server to start up before checking
 
-trigger-pipeline:
+# Target to trigger pipeline(2 minutes break between pipelines run)
+trigger-pipeline: start
+	@echo "Triggering pipeline..."
 	@(cd $(WORKING_DIR) && \
-	curl --fail -X POST http://localhost:6789/api/pipeline_schedules/1/pipeline_runs/d632dff404a1407b99fa00bf011e0f52 -v || echo "Failed to trigger pipeline. Is the service up?"; \ 
-	sleep 90; \
-	curl --fail -X POST http://localhost:6789/api/pipeline_schedules/2/pipeline_runs/0c5dfbe5fa6d47c6bc0050c188e585cb -v || echo "Failed to trigger the second request. Is the service up?")
+	curl --fail -X POST http://localhost:$(HOST_PORT)/api/pipeline_schedules/1/pipeline_runs/d632dff404a1407b99fa00bf011e0f52 -v && \
+	sleep 120 && \
+	curl --fail -X POST http://localhost:$(HOST_PORT)/api/pipeline_schedules/2/pipeline_runs/0c5dfbe5fa6d47c6bc0050c188e585cb -v) || echo "Failed to trigger pipeline. Is the service up?"
