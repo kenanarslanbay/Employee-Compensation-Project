@@ -78,7 +78,7 @@ gcloud auth application-default login
 
 ## Setting up environment in VM:
 Creating ssh key on your local machine to make ssh connection to your vm.
-- go to directory **~/.ssh** on your terminal
+go to directory **~/.ssh** on your terminal
 Run following command to create ssh key:
 ```
 ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
