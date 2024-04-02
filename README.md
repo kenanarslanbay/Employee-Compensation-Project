@@ -9,7 +9,7 @@ The dataset maintained by the San Francisco Controller's Office encompasses deta
 
 Data can be accessed via following link [[Employee Compensation data](https://data.sfgov.org/City-Management-and-Ethics/Employee-Compensation/88g8-5mnd/about_data)]
 
-## Data Pipeline
+## Architecture
 ![flow](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/45802d75-8757-4eb2-bc88-48a15bb77df7)
 
 ## Technologies
