@@ -3,13 +3,13 @@ repos:
     rev: v2.3.0
     hooks:
       - id: check-yaml
-        files: \.(yaml|yml)$  # Check YAML files in all directories
+        files: .+  # Check YAML files in all directories
       - id: end-of-file-fixer
-        files: .+$  # Check all files for end-of-file issues
+        files: .+  # Check all files for end-of-file issues
       - id: check-added-large-files
-        files: .+$  # Check all files for large additions
+        files: .+  # Check all files for large additions
       - id: detect-private-key
-        files: .+$  # Check all files for private keys
+        files: .+  # Check all files for private keys
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.3.3
@@ -42,17 +42,17 @@ repos:
         name: pylint
         entry: pylint
         language: system
-        files: .+\.py$
+        files: .+\.py$  # Check Python files in all directories
         exclude: ^tests/
         args: [--rcfile=.pylintrc]
       - id: shellcheck
         name: shellcheck
         entry: shellcheck
         language: system
-        files: .+\.sh$
+        files: .+\.sh$  # Check Shell scripts in all directories
       - id: makefile-lint
         name: makefile-lint
         entry: make
         language: system
-        files: .+/Makefile$
+        files: .+/Makefile$  # Check Makefiles in all directories
         args: [lint]
