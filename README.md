@@ -31,7 +31,8 @@ Terraform is an open source tool which has been used for provisioning infrastruc
 
 ### Workflow orchestration: Mage
 Mage is an open source orchestration tool that provides data extraction, integration and transformation by building real-time and batch pipelines.
-[<img src="images/dag.png"/>](https://github.com/mage-ai/assets/raw/main/mascots/mascots-shorter.jpeg?raw=true)
+![mageaads](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/8742c356-5877-45c5-be25-572b8d0c0474)
+
 
 
 ### Dashboard
@@ -51,7 +52,7 @@ The [dashboard](https://datastudio.google.com/s/kJWMinVHqMw)](https://lookerstud
 The steps to reproduce this pipeline is as follows:
 1. Clone the repo
     ```
-        (https://github.com/kenanarslanbay/Employee-Compensation-Project.git)
+        git clone https://github.com/kenanarslanbay/Employee-Compensation-Project.git
 
         cd Employee-Compensation-Project/
     ```
