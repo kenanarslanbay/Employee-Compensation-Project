@@ -107,9 +107,9 @@ ssh -i ~/.ssh/gpc <yourname>@<externalip>
 Create a file under **~/.ssh** called config. We will be using this for configuring SSH connection.
 ```
 Host de-project
-HostName <externalip>
-User <your_user_name>
-IdentityFile ~/.ssh/gpc
+    HostName <your_external_ip>
+    User username
+    IdentityFile ~/.ssh/<de-project>
 ```
 	
 After you saved you can connect with following or you can set this configs on vs code.
@@ -174,8 +174,9 @@ Follow these steps to reproduce the pipeline:
     ```
 
 **Important Note:** Remember to destroy all remote objects managed by our Terraform configuration after completing your project to avoid unnecessary charges to your GCP account:
-```bash
+```
 terraform destroy
+```
 
   
 
