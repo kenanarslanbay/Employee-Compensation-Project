@@ -42,7 +42,7 @@ The second pipeline retrieves data from Google Cloud Storage, applies further tr
 
 ### Looker Studio
 By connecting our final data to Looker studio following dashboard has been created.
-[Employee_Compensation.pdf](https://github.com/kenanarslanbay/Employee-Compensation-Project/files/14835889/Employee_Compensation.pdf)
+![dashboard](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/4e432f1e-2a3e-4155-97d0-2cf3ff0e206f)
 
 You can also access interactive dashboard via following link: [dashboard](https://datastudio.google.com/s/kJWMinVHqMw)](https://lookerstudio.google.com/u/0/reporting/70c4d6ad-bd73-4df2-9f95-5a6f17477cc6/page/gw7uD )
 
@@ -67,7 +67,12 @@ Then add the following roles: ![API](https://github.com/kenanarslanbay/Employee-
 
 ## Service Account Key
 We need the authorization key for the created service account. First, go to service account details.Then on **"KEYS"** Tab select **"Add Key"** section **"Create new key"**. Choose Json and save the file in your local.
-Later on we will save this our home folder in **$HOME/.google/** in our VM.
+Install the [Gcloud SDK](https://cloud.google.com/sdk/docs/install-sdk) and set your environment variable pointing to your key:
+```
+export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+
+gcloud auth application-default login
+```
 
 ## Setting up environment in VM:
 Creating ssh key on your local machine to make ssh connection to your vm.
@@ -101,10 +106,19 @@ Host de-project
     User <your_user_name>
     IdentityFile ~/.ssh/gpc
 	
-After you saved you can connect with following
+After you saved you can connect with following or you can set this configs on vs code.
 -**ssh de-project**
 
 **Note**: When you shutdown vm and intiliaze the VM IP changes every time.so you may need to edit external ip
+
+# Installing docker
+
+-sudo apt-get update
+-sudo apt-get install ca-certificates curl
+-sudo install -m 0755 -d /etc/apt/keyrings
+-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+-sudo chmod a+r /etc/apt/keyrings/docker.asc
+-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 The steps to reproduce this pipeline is as follows:
 1. Clone the repo
@@ -113,6 +127,22 @@ The steps to reproduce this pipeline is as follows:
 
         cd Employee-Compensation-Project/
     ```
-2. Setup Terraform
+2. 
+    ~~~sh
+cd $HOME/Employee-Compensation-Project/01-Infrastructure
+
+terraform init
+
+# First we plan and check changes to new infra plan
+terraform plan
+# Create new infra
+terraform apply
+~~~
+**Important note**: When you are done with your project, don't forget to destroy all remote objects managed by a our Terraform configuration to avoid incurring unnecessary charges to your GCP account, 
+~~~sh
+
+terraform destroy
+  
+
 
 
