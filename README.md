@@ -5,7 +5,7 @@
 Project goal is to develop end to end data engineering solution. This involves extracting data from diverse source, transforming it into a consistent format, and loading it into a central repository. By achieving this, I aim to facilitate efficient data management and analysis for informed decision-making process.
 
 ## Dataset
-The [dataset](https://data.sfgov.org/City-Management-and-Ethics/Employee-Compensation/88g8-5mnd/about_data) maintained by the San Francisco Controller's Office encompasses detailed records of salaries and benefits disbursed to City employees starting from fiscal year 2013. It comprises comprehensive information on compensation packages provided to employees across various departments, positions, and pay grades within the city administration.
+The [data](https://data.sfgov.org/City-Management-and-Ethics/Employee-Compensation/88g8-5mnd/about_data) maintained by the San Francisco Controller's Office encompasses detailed records of salaries and benefits disbursed to City employees starting from fiscal year 2013. It comprises comprehensive information on compensation packages provided to employees across various departments, positions, and pay grades within the city administration.
 
 ## Architecture
 ![flow](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/45802d75-8757-4eb2-bc88-48a15bb77df7)
