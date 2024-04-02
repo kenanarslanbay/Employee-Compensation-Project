@@ -32,7 +32,7 @@ The mage orchestrates two pipelines:
 
 The first pipeline extracts data from an API, applies cleaning and transformation steps, then writes the transformed data to Google Cloud Storage.
 
-![first_api](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/89ac280c-2a3f-47b4-aa66-d40bb447f3ab)![trigger_1PNG]
+![first_api](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/89ac280c-2a3f-47b4-aa66-d40bb447f3ab)
 
 
 
