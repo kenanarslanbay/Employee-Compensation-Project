@@ -7,7 +7,7 @@ Project goal is to develop end to end data engineering solution. This involves e
 ## Dataset
 The dataset maintained by the San Francisco Controller's Office encompasses detailed records of salaries and benefits disbursed to City employees starting from fiscal year 2013. It comprises comprehensive information on compensation packages provided to employees across various departments, positions, and pay grades within the city administration.
 
-Data can be accessed via following link [[Employee Compensation data](https://data.sfgov.org/City-Management-and-Ethics/Employee-Compensation/88g8-5mnd/about_data)]
+Data can be accessed [here](https://data.sfgov.org/City-Management-and-Ethics/Employee-Compensation/88g8-5mnd/about_data)]
 
 ## Architecture
 ![flow](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/45802d75-8757-4eb2-bc88-48a15bb77df7)
@@ -40,15 +40,15 @@ Terraform is an open-source tool used for provisioning infrastructure resources.
 
 ### Looker Studio
 A dashboard has been created by connecting the final data to Looker Studio.
-![Looker Dashboard](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/4e432f1e-2a3e-4155-97d0-2cf3ff0e206f)
+![looker_dashboard](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/b6b37262-0336-4c3c-99ca-8fae71aa4ea8)
 
 An interactive version of the dashboard is available [here](https://lookerstudio.google.com/u/0/reporting/70c4d6ad-bd73-4df2-9f95-5a6f17477cc6/page/gw7uD).
 
 
-### Reproduce the Project
+## Reproduce the Project
 
  
-## Prerequisities
+### Prerequisities
     - docker
     - docker-compose
     - terraform
@@ -74,7 +74,7 @@ Access to a free trial of GCP or an existing account is required. [Click here](h
    - Storage Admin
    - Storage Object Admin
  
-# Service Account Key
+### Service Account Key
 
 To access the authorization key for the created service account, follow these steps:
 
@@ -85,9 +85,9 @@ To access the authorization key for the created service account, follow these st
 
 Later on, we will save this file in our home folder `$HOME/.google/` on the VM.
 
-# Setting up Environment in VM
+### Setting up Environment in VM
 
-## Create VM on Compute Engine
+### Create VM on Compute Engine
 
 Follow these steps to create a VM instance on Google Compute Engine:
 
@@ -96,7 +96,7 @@ Follow these steps to create a VM instance on Google Compute Engine:
 - Choose 4 CPUs and 16 GB memory as standard.
 - For the operating system, you may choose Ubuntu 20.04.
 
-## Setting up Environment in VM
+### Setting up Environment in VM
 
 To set up your environment in the VM:
 
@@ -108,7 +108,7 @@ To set up your environment in the VM:
      ```
 2. Put the public key to Google Cloud. Under Compute Engine, go to Metadata, select the SSH tab, and add the SSH key. Then, enter the key found within the public key file and save.
 
-## Accessing Your VM via SSH
+### Accessing Your VM via SSH
 
 ### Initial SSH Connection
 
@@ -121,7 +121,7 @@ To access your VM via SSH for the first time:
    ```bash
    ssh -i ~/.ssh/gpc <yourname>@<externalip>
 
-# Configuring ssh file to connect automatically whenever we exits:
+### Configuring ssh file to connect automatically whenever we exits:
 Create a file under **~/.ssh** called config. We will be using this for configuring SSH connection.
 ```
 Host de-project
@@ -135,11 +135,11 @@ After you saved you can connect with following or you can set this configs on vs
 
 **Note**: When you shutdown vm and intiliaze the VM IP may change time ti time.Thus, you may need to change external ip in your configs!
 
-# Installing Docker
+### Installing Docker
 
 To install Docker on your system, follow [here](https://docs.docker.com/engine/install/ubuntu/)
 
-# Running docker without sudo:
+### Running docker without sudo:
 ```
 sudo groupadd docker
 sudo usermod -aG docker $USER
@@ -181,7 +181,7 @@ Follow these steps to reproduce the pipeline:
 terraform destroy
 ```
 
-## Configuring GCP with Mage
+### Configuring GCP with Mage
 
 To upload your data (or GCS Bucket) using Mage, you first need to configure it to authenticate with GCP. Follow these steps:
 
@@ -190,7 +190,7 @@ To upload your data (or GCS Bucket) using Mage, you first need to configure it t
 2. Update the section under Google to include your service account credentials:
 
     ```yaml
-    GOOGLE_SERVICE_ACC_KEY_FILEPATH: "/home/src/{your_credentials}.json"
+    GOOGLE_SERVICE_ACC_KEY_FILEPATH: "/home/src/{creds}.json"
     GOOGLE_LOCATION: EU # Optional
     ```
 
