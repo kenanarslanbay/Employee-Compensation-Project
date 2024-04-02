@@ -50,6 +50,7 @@ You can also access interactive dashboard via following link: [dashboard](https:
 
 ### Reproduce the Project
 
+ 
 ## Prerequisities
     - docker
     - docker-compose
@@ -116,34 +117,66 @@ After you saved you can connect with following or you can set this configs on vs
 
 **Note**: When you shutdown vm and intiliaze the VM IP may change time ti time.Thus, you may need to change external ip in your configs!
 
-# Installing docker
+# Installing Docker
 
--sudo apt-get update
--sudo apt-get install ca-certificates curl
--sudo install -m 0755 -d /etc/apt/keyrings
--sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
--sudo chmod a+r /etc/apt/keyrings/docker.asc
--sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+To install Docker on your system, follow these steps:
 
-The steps to reproduce this pipeline is as follows:
-1. Clone the repo
+1. Update package lists:
+    ```bash
+    sudo apt-get update
     ```
-        git clone https://github.com/kenanarslanbay/Employee-Compensation-Project.git
 
-        cd Employee-Compensation-Project/
+2. Install necessary dependencies:
+    ```bash
+    sudo apt-get install ca-certificates curl
     ```
-2. 
-    ~~~sh
-cd $HOME/Employee-Compensation-Project/01-Infrastructure
 
-- terraform init
-- teraform plan
-- terraform apply
-~~~
-**Important note**: When you are done with your project, don't forget to destroy all remote objects managed by a our Terraform configuration to avoid incurring unnecessary charges to your GCP account, 
-~~~sh
+3. Set up Docker's official GPG key:
+    ```bash
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+    ```
 
-- terraform destroy
+4. Install Docker packages:
+    ```bash
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    ```
+
+## Reproducing the Pipeline
+
+Follow these steps to reproduce the pipeline:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/kenanarslanbay/Employee-Compensation-Project.git
+    cd Employee-Compensation-Project/
+    ```
+
+2. Navigate to the infrastructure directory:
+    ```bash
+    cd $HOME/Employee-Compensation-Project/01-Infrastructure
+    ```
+
+3. Initialize Terraform:
+    ```bash
+    terraform init
+    ```
+
+4. Plan the changes:
+    ```bash
+    terraform plan
+    ```
+
+5. Apply the changes:
+    ```bash
+    terraform apply
+    ```
+
+**Important Note:** Remember to destroy all remote objects managed by our Terraform configuration after completing your project to avoid unnecessary charges to your GCP account:
+```bash
+terraform destroy
+
   
 
 
