@@ -3,23 +3,35 @@ repos:
     rev: v2.3.0
     hooks:
       - id: check-yaml
+        files: .+  # Check YAML files in all directories
       - id: check-ast
+        files: .+  # Check AST (Abstract Syntax Tree) of files in all directories
       - id: check-added-large-files
+        files: .+  # Check all files for large additions
       - id: detect-private-key
+        files: .+  # Check all files for private keys
       - id: trailing-whitespace
+        files: .+  # Check all files for trailing whitespace
+
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.3.3
     hooks:
       - id: python-safety-dependencies-check
+        files: .+\.py$  # Check Python files in all directories
+
   - repo: https://github.com/psf/black
     rev: 22.10.0
     hooks:
       - id: black
+        files: .+\.py$  # Format Python files in all directories
+
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.77.1
     hooks:
       - id: terraform_fmt
+        files: .+\.(tf|tfvars)$  # Format Terraform files in all directories
       - id: terraform_tflint
         args:
-            - --args=--disable-rule=terraform_required_providers
-            - --args=--disable-rule=terraform_required_version
+          - --args=--disable-rule=terraform_required_providers
+          - --args=--disable-rule=terraform_required_version
+        files: .+\.(tf|tfvars)$  # Validate Terraform files with TFLint in all directories
