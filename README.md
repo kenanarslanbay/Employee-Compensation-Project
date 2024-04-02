@@ -32,7 +32,8 @@ The mage orchestrates two pipelines:
 
 The first pipeline extracts data from an API, applies cleaning and transformation steps, then writes the transformed data to Google Cloud Storage.
 
-![first_api](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/89ac280c-2a3f-47b4-aa66-d40bb447f3ab)
+![first_api](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/89ac280c-2a3f-47b4-aa66-d40bb447f3ab)![trigger_1PNG](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/ed5a6362-3be5-4830-b4e1-8abd0cfc1f5f)
+
 
 
 The second pipeline retrieves data from Google Cloud Storage, applies further transformations, and then writes the processed data to BigQuery for in-depth analysis.
@@ -56,6 +57,7 @@ You can also access interactive dashboard via following link: [dashboard](https:
     - git
     - GCP account
     - gcloud (if not working on a GCP VM)
+    - make
     
 ## Google Cloud Platform
 For the project you will need access to a free trial of GCP or you can use your existing one via [here](https://cloud.google.com/free). 
@@ -89,11 +91,14 @@ Put public key to Google Cloud. Below the section Compute Engine go to Metadata.
 - Choose 4 cpu 16gb Memory as standart
 - For operating system you may choose ubuntu 20.04
 
-# Accessing your vm via ssh:
+## Accessing Your VM via SSH
 
-- Copy the External IP on vm, to your command line and enter the below:
+### Initial SSH Connection
+1. Copy the External IP address of your VM.
+2. Open your command line interface.
+3. Enter the following command:
 
-```
+```bash
 ssh -i ~/.ssh/gpc <yourname>@<externalip>
 ```
 
@@ -109,7 +114,7 @@ Host de-project
 After you saved you can connect with following or you can set this configs on vs code.
 -**ssh de-project**
 
-**Note**: When you shutdown vm and intiliaze the VM IP changes every time.so you may need to edit external ip
+**Note**: When you shutdown vm and intiliaze the VM IP may change time ti time.Thus, you may need to change external ip in your configs!
 
 # Installing docker
 
@@ -131,17 +136,14 @@ The steps to reproduce this pipeline is as follows:
     ~~~sh
 cd $HOME/Employee-Compensation-Project/01-Infrastructure
 
-terraform init
-
-# First we plan and check changes to new infra plan
-terraform plan
-# Create new infra
-terraform apply
+- terraform init
+- teraform plan
+- terraform apply
 ~~~
 **Important note**: When you are done with your project, don't forget to destroy all remote objects managed by a our Terraform configuration to avoid incurring unnecessary charges to your GCP account, 
 ~~~sh
 
-terraform destroy
+- terraform destroy
   
 
 
