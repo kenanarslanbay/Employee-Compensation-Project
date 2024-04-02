@@ -51,7 +51,7 @@ The [dashboard](https://datastudio.google.com/s/kJWMinVHqMw)](https://lookerstud
 The steps to reproduce this pipeline is as follows:
 1. Clone the repo
     ```
-        [git clone https://github.com/oseghalepatrick/data-eng-zoomcamp.git](https://github.com/kenanarslanbay/Employee-Compensation-Project.git)
+        (https://github.com/kenanarslanbay/Employee-Compensation-Project.git)
 
         cd Employee-Compensation-Project/
     ```
