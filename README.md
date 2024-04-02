@@ -104,8 +104,7 @@ ssh -i ~/.ssh/gpc <yourname>@<externalip>
 ```
 
 # Configuring ssh file to connect automatically whenever we exits:
-
-- Create a file under **~/.ssh** called config. We will be using this for configuring SSH.
+Create a file under **~/.ssh** called config. We will be using this for configuring SSH connection.
 
 Host de-project
 HostName <externalip>
