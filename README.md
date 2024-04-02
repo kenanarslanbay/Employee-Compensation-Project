@@ -31,10 +31,14 @@ Terraform is an open source tool which has been used for provisioning infrastruc
 The mage orchestrates two pipelines:
 
 The first pipeline extracts data from an API, applies cleaning and transformation steps, then writes the transformed data to Google Cloud Storage.
-![API](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/3634cf77-5119-450c-a44f-c1066496293a)
+
+![first_api](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/89ac280c-2a3f-47b4-aa66-d40bb447f3ab)
+
 
 The second pipeline retrieves data from Google Cloud Storage, applies further transformations, and then writes the processed data to BigQuery for in-depth analysis.
-![API2](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/27f55e13-0ca9-4033-aab2-873ca366189e)
+
+![API2](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/3b2aed29-8789-43b8-ae8a-42e130ed73d8)
+
 
 ### Looker Studio
 By connecting our final data to Looker studio following dashboard has been created.
