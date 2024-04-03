@@ -27,6 +27,9 @@ Google Cloud Platform is utilized for deploying the end-to-end pipeline with Goo
 Terraform is an open-source tool used for provisioning infrastructure resources. It was employed to create GCP resources by defining infrastructure as code [here](https://github.com/kenanarslanbay/Employee-Compensation-Project/tree/main/01-Infrastructure).
 
 ### Workflow Orchestration: Mage
+
+Mage used to orchestrate following pipelines:
+
 1. The first pipeline extracts data from an API, applies cleaning and transformation steps, then writes the transformed data to Google Cloud Storage.
 
    ![API Pipeline](https://github.com/kenanarslanbay/Employee-Compensation-Project/assets/66200735/89ac280c-2a3f-47b4-aa66-d40bb447f3ab)
@@ -119,7 +122,7 @@ To access your VM via SSH for the first time:
 3. Enter the following command:
 
    ```bash
-   ssh -i ~/.ssh/gpc <yourname>@<externalip>
+   ssh -i ~/.ssh/gcp <yourname>@<externalip>
 
 ### Configuring ssh file to connect automatically whenever we exits:
 Create a file under **~/.ssh** called config. We will be using this for configuring SSH connection.
@@ -153,7 +156,6 @@ Follow these steps to reproduce the pipeline:
 1. Clone the repository:
     ```bash
     git clone https://github.com/kenanarslanbay/Employee-Compensation-Project.git
-    cd Employee-Compensation-Project/
     ```
 
 2. Navigate to the infrastructure directory:
@@ -196,7 +198,9 @@ To upload your data (or GCS Bucket) using Mage, you first need to configure it t
 
     Replace `{your_credentials}.json` with the filepath of your service account credentials JSON file. Optionally, specify the desired location in `GOOGLE_LOCATION`.
 
-3. Run the make file in make directory to run everything then you can observe runs of pipeline via mage ui.
+3. When you are running mage make you sure you have your creds.json in your mage directory.
+
+4. Run the make file in make directory to run everything then you can observe runs of pipeline via mage ui.
 
 
 ### Extra
