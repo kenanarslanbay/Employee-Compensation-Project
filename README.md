@@ -170,15 +170,15 @@ Follow these steps to reproduce the pipeline:
 
 4. Plan the changes:
     ```bash
-    terraform plan
+    terraform plan -var="project=<your-gcp-project-id>"
     ```
 
 5. Apply the changes:
     ```bash
-    terraform apply
+    terraform apply -var="project=<your-gcp-project-id>"
     ```
 
-**Important Note:** Remember to destroy all remote objects managed by our Terraform configuration after completing your project to avoid unnecessary charges to your GCP account:
+**Important:** Remember to destroy all remote objects managed by our Terraform configuration after completing your project to avoid unnecessary charges to your GCP account:
 ```
 terraform destroy
 ```
@@ -207,11 +207,11 @@ To upload your data (or GCS Bucket) using Mage, you first need to configure it t
 
 Setting Up Git Pre-commit Hooks
 
-1. Creating a hook for the repo Run pre-commit install in your shell
+1. Creating a hook for the repo run **pre-commit install** in your shell
 
-2. Run git add .pre-commit-config.yaml
+2. Run **git add .pre-commit-config.yaml**
 
-3. Run a git commit git commit -m "testing"
+3. Run a **git commit git commit -m "testing"**
 
 
   
