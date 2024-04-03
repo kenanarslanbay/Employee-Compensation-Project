@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-Project goal is to develop end to end data engineering solution. This involves extracting data from diverse source, transforming it into a consistent format, and loading it into a central repository. By achieving this, I aim to facilitate efficient data management and analysis for informed decision-making process.
+Project goal is to develop end to end data engineering solution. This involves extracting data from data source, transforming it into a consistent format, and loading it into a central repository. By achieving this, I aim to facilitate efficient data management and analysis for informed decision-making process.
 
 ## Dataset
 The [data](https://data.sfgov.org/City-Management-and-Ethics/Employee-Compensation/88g8-5mnd/about_data) maintained by the San Francisco Controller's Office encompasses detailed records of salaries and benefits disbursed to City employees starting from fiscal year 2013. It comprises comprehensive information on compensation packages provided to employees across various departments, positions, and pay grades within the city administration.
@@ -28,7 +28,7 @@ Terraform is an open-source tool used for provisioning infrastructure resources.
 
 ### Workflow Orchestration: Mage
 
-Mage used to orchestrate following pipelines:
+Mage used to orchestrate the following pipelines:
 
 1. The first pipeline extracts data from an API, applies cleaning and transformation steps, then writes the transformed data to Google Cloud Storage.
 
@@ -94,10 +94,10 @@ Later on, we will save this file in our home folder `$HOME/.google/` on the VM.
 
 Follow these steps to create a VM instance on Google Compute Engine:
 
-- Choose a region close to you.
+- Choose a region that close to you.
 - Create a standard disk with a size of 30-40 GB.
 - Choose 4 CPUs and 16 GB memory as standard.
-- For the operating system, you may choose Ubuntu 20.04.
+- For the operating system we will proceed with any linux distribution. For example, you may choose Ubuntu 20.04.
 
 ### Setting up Environment in VM
 
